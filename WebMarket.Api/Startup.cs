@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-=
+using System.Reflection;
+using WebMarket.Domain.EF;
+
 namespace WebMarket.Api
 {
     public class Startup
@@ -20,8 +22,8 @@ namespace WebMarket.Api
         {
             services.AddSingleton(conf => Configuration);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            var connection = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=WebMarket;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
+            var connection = @"Server=(localdb)\MSSQLLocalDB;Initial Catalog=WebMarket;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("WebMarket.Api")));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

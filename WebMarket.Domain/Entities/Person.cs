@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebMarket.Domain.Entities.Models
+namespace WebMarket.Domain.Entities
 {
     public class Person
     {

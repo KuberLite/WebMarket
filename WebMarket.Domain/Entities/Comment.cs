@@ -1,16 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebMarket.Domain.Entities.Models
+namespace WebMarket.Domain.Entities
 {
-    public class Comments
+    public class Comment
     {
-        [Key]
-        public string CommentsId { get; set; }
+        public string CommentId { get; set; }
 
-        [Key]
         public string UserId { get; set; }
 
-        [Key]
         public string ProductId { get; set; }
 
         public string CommentText { get; set; }
