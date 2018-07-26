@@ -12,44 +12,55 @@ namespace WebMarket.Domain.Repositories
     {
         protected readonly DbContext _context;
 
+        protected readonly DbSet<TEntity> _dbSet;
+
         public Repository(DbContext context)
         {
             _context = context;
         }
 
+        public IQueryable<TEntity> Query()
+        {
+            return _dbSet;
+        }
+
         public void Add(TEntity entity)
         {
-            _context.Set<TEntity>().Add(entity);
+            _dbSet.Add(entity);
+            _context.SaveChanges();
         }
 
         public void AddRange(IEnumerable<TEntity> entities)
         {
-            _context.Set<TEntity>().AddRange();
+            _dbSet.AddRange(entities);
+            _context.SaveChanges();
         }
 
-        public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
+        public IEnumerable<TEntity> Find(Func<TEntity, bool> predicate)
         {
-            return _context.Set<TEntity>().Where(predicate);
+            return _dbSet.Where(predicate);
         }
 
         public IEnumerable<TEntity> GetAll()
         {
-            return _context.Set<TEntity>().ToList();
+            return _dbSet.ToList();
         }
 
         public TEntity GetById(Tkey id)
         {
-            return _context.Set<TEntity>().Find(id);
+            return _dbSet.Find(id);
         }
 
         public void Remove(TEntity entity)
         {
-            _context.Set<TEntity>().Remove(entity);
+            _dbSet.Remove(entity);
+            _context.SaveChanges();
         }
 
         public void RemoveRange(IEnumerable<TEntity> entities)
         {
-            _context.Set<TEntity>().RemoveRange(entities);
+            _dbSet.RemoveRange(entities);
+            _context.SaveChanges();
         }
     }
 }

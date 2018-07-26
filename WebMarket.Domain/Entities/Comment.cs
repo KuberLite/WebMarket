@@ -13,5 +13,7 @@ namespace WebMarket.Domain.Entities
         public string CommentText { get; set; }
 
         public string PublicationDate { get; set; }
+
+        public virtual Product Product { get; set; }
     }
 }

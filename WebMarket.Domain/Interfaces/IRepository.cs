@@ -7,12 +7,14 @@ using System.Linq.Expressions;
 namespace WebMarket.Domain.Interfaces
 {
     public interface IRepository<TEntity, TKey> where TEntity : class
-    { 
+    {
+        IQueryable<TEntity> Query();
+
         TEntity GetById(TKey id);
 
         IEnumerable<TEntity> GetAll();
 
-        IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
+        IEnumerable<TEntity> Find(Func<TEntity, bool> predicate);
 
         void Add(TEntity entity);
 

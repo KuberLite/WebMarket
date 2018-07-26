@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMarket.Api", "WebMarket.Api\WebMarket.Api.csproj", "{2282F31C-66AC-4275-8EF6-FB68FC1E185A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebMarket.Api", "WebMarket.Api\WebMarket.Api.csproj", "{2282F31C-66AC-4275-8EF6-FB68FC1E185A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{F1928FA8-1F47-4BE1-855C-C69DACCBA8BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMarket.Domain", "WebMarket.Domain\WebMarket.Domain.csproj", "{0C691DE5-AEA9-413B-A5AD-0538E1FF41FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebMarket.Domain", "WebMarket.Domain\WebMarket.Domain.csproj", "{0C691DE5-AEA9-413B-A5AD-0538E1FF41FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebMarket.ViewModel", "WebMarket.ViewModel\WebMarket.ViewModel.csproj", "{D0270079-9BA2-401F-BF8B-6C1F9238DE2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMarket.BL", "WebMarket.BL\WebMarket.BL.csproj", "{17F7EA7A-F2B9-45F5-A7EE-FC18517FB3B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +27,14 @@ Global
 		{0C691DE5-AEA9-413B-A5AD-0538E1FF41FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C691DE5-AEA9-413B-A5AD-0538E1FF41FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C691DE5-AEA9-413B-A5AD-0538E1FF41FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0270079-9BA2-401F-BF8B-6C1F9238DE2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0270079-9BA2-401F-BF8B-6C1F9238DE2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0270079-9BA2-401F-BF8B-6C1F9238DE2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0270079-9BA2-401F-BF8B-6C1F9238DE2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17F7EA7A-F2B9-45F5-A7EE-FC18517FB3B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17F7EA7A-F2B9-45F5-A7EE-FC18517FB3B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17F7EA7A-F2B9-45F5-A7EE-FC18517FB3B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17F7EA7A-F2B9-45F5-A7EE-FC18517FB3B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
